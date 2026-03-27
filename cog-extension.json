@@ -1,0 +1,20 @@
+{
+  "name": "cog-pascal",
+  "version": "0.1.0",
+  "extensions": [".pas", ".pp", ".lpr", ".dpr", ".dpk", ".inc", ".dfm", ".lfm"],
+  "language_names": ["pascal", "objectpascal", "delphi", "freepascal"],
+  "args": ["--output", "{output}", "{files}"],
+  "build": "mkdir -p bin && fpc -O2 -Mobjfpc -Sh src/cogpascal.pas -FUbin -FEbin -ocog-pascal",
+  "debugger": {
+    "type": "native",
+    "boundary_markers": [
+      "$PASCALMAIN",
+      "FPC_SysEntry",
+      "FPC_SYSTEMMAIN",
+      "FPC_DO_EXIT",
+      "FPC_RAISEEXCEPTION",
+      "FPC_CATCHES",
+      "FPC_RERAISE"
+    ]
+  }
+}

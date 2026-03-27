@@ -1,0 +1,5 @@
+bin/
+src/*.o
+src/*.ppu
+*.o
+*.ppu
